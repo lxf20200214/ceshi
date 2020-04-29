@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function SuperType() {
+        this.property = true;
+      }
+      SuperType.prototype.getSuperValue = function() {
+        return this.property;
+      };
+      function SubType() {
+        this.subproperty = false;
+      }
+      //继承了 SuperType
+      SubType.prototype = new SuperType();
+      // 添加新方法
+      SubType.prototype.getSubValue = function() {
+        return this.subproperty;
+      };
+      // 重写超类型中的方法
+      //   SubType.prototype.getSuperValue = function() {
+      //     return false;
+      //   };
+      var instance = new SubType();
+      console.log(SubType.prototype.getSuperValue());
+
+      alert(instance.getSuperValue()); //false
+      console.log(SubType.prototype);
+      console.log(SuperType.prototype);
+      console.log(instance);
+    </script>
+  </body>
+</html>

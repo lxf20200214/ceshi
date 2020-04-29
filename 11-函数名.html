@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // console.log(fn);
+
+      // var fn = function() {
+      //   console.log(123);
+      // };
+      // console.log(
+      //   function() {
+      //     console.log(123);
+      //   }.name
+      // );
+      var factorial = function f(num) {
+        if (num <= 1) {
+          return 1;
+        } else {
+          return num * f(num - 1);
+        }
+      };
+      // console.log(factorial);
+      console.log(f);
+      // f = null;
+      // console.log(f);
+      // console.log(factorial);
+      console.log(factorial(4));
+    </script>
+  </body>
+</html>
